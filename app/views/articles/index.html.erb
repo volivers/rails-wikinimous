@@ -1,0 +1,17 @@
+<nav>
+  <div class="logo">
+    <%= link_to "Wikinimous", articles_path %>
+  </div>
+  <div class="create-btn">
+    <%= link_to "New Article", new_article_path(@article) %>
+  </div>
+<nav>
+<hr>
+<body>
+<ul>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article) %><br>
+    <%= article.content %></li>
+  <% end %>
+</ul>
+</body>
